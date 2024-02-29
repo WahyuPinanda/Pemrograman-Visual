@@ -1,0 +1,53 @@
+// TODO 3
+const Tiger = require('./Tiger');
+const Wolf = require('./Wolf');
+
+const fight = (wolf,tiger) => {
+if (tiger.strength > wolf.strength) {
+return tiger.growl();
+}
+if (wolf.strength > tiger.strength) {
+return wolf.howl();
+
+}
+console.log('Harimau dan serigala sama-sama kuat!');
+};
+
+const myTiger = new Tiger();
+const myWolf = new Wolf();
+
+const result = fight(myWolf, myTiger);
+
+// TODO 4
+module.exports = {
+fight,
+myTiger,
+myWolf,
+result
+};
+
+class Tiger {
+constructor() {
+this.strength = Math.floor(Math.random() * 100);
+}
+
+growl() {
+return 'grrrrrrr';
+}
+}
+
+// TODO
+module.exports = Tiger;
+
+class Wolf {
+constructor() {
+this.strength = Math.floor(Math.random() * 100);
+}
+
+howl() {
+return 'Auuuuuuuuu';
+}
+}
+
+// TODO 2
+module.exports = Wolf;
